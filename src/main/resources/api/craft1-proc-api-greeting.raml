@@ -1,0 +1,52 @@
+#%RAML 1.0
+title: craft1-proc-Api-greeting
+version: 1.0
+traits:
+  client_id_require:
+    headers:
+        client_id:
+          type: string
+          description: client_ID provided by Api Manager
+          required: true
+        client_secret:
+          type: string
+          description: client_Secret provided by Api Manager
+          required: true
+/greeting:
+  get:
+   queryParameters:
+    customerName:
+      description: Name of a customers
+      type: string
+      required: false
+   is:
+    client_id_require:
+   responses:
+      200:
+        body:
+          application/json:
+    
+            example:
+              {
+                "name": "Hello max today is 10/11/2020"
+              }
+      404:
+        body:
+          applocation/json:
+            example:
+              {
+                "Message": "Bad_request"
+              }
+
+      500:
+        body:
+          application/json:
+            example:
+              {
+                "Message": "Server_Error"
+              }
+  
+
+
+        
+    
