@@ -30,6 +30,16 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+				<cloudHubDeployment>
+            <uri>https://anypoint.mulesoft.com</uri>
+            <muleVersion>4.3.0</muleVersion>
+            <username>amir333</username>
+            <password>Amir122306</password>
+            <applicationName>craft1-proc-api-greeting</applicationName>
+            <environment>Sandbox</environment>
+            <workerType>MICRO</workerType>
+            <objectStoreV2>true</objectStoreV2>
+        </cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
